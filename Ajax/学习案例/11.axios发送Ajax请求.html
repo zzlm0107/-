@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>AJAX</button>
+
+
+    <script>
+        const btns = document.querySelectorAll('button');
+
+        btns[0].addEventListener('click',function(){
+            axios.get('http://127.0.0.1:8000/axios-server',{
+                // url参数
+                params:{
+                    id:100,
+                    vip:7
+                }
+            })
+        })
+    </script>
+</body>
+</html>

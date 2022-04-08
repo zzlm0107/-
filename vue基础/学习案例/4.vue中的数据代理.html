@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h1>姓名:{{name}}</h1>
+        <h1>年龄:{{age}}</h1>
+    </div>
+    
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+
+        // 通过vm对象来对data对象中的属性进行数据代理
+        var vm = new Vue({
+            el:'.box',
+            data:{
+                name:'andy',
+                age:18,
+            }
+        })
+    </script>
+</body>
+</html>

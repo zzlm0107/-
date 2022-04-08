@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 450px;
+            margin: 100px auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box .eye {
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .box .eye img {
+            width: 100%;
+        }
+
+        .box input {
+            height: 30px;
+            width: 360px;
+            border: none;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <button>按钮</button>
+    <input type="text" placeholder="输入内容"> -->
+
+
+    <div class="box">
+        <div class="eye">
+            <img src="../学习图片/close.png" alt="">
+        </div>
+        <input type="password">
+    </div>
+
+
+    <script>
+        // var btn = document.querySelector('button');
+        // var input = document.querySelector('input');
+
+        // btn.onclick = function() {
+        //     input.placeholder = '已经点击';
+        //     this.disabled = true;
+        // }
+
+        var pic = document.querySelector('img');
+        var input = document.querySelector('input');
+        var flag = false;
+        pic.onclick = function() {
+            if(flag == false){
+                input.type = 'text';
+                pic.src = '../学习图片/open.png';
+                flag = true;
+            } else {
+                input.type = 'password';
+                pic.src = '../学习图片/close.png';
+                flag = false;
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>

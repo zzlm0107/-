@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>节流按钮</button>
+
+
+    <script>        //防抖 触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+        function handler(x) {
+            console.log('这是防抖的回调函数，输入后两秒执行',x);
+        }
+
+        // 防抖函数
+        function debounce(callBack, time) {
+            let timer = null;
+            return function (...args) {
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(() => {
+                    callBack.apply(this,args)
+                }, time);
+            }
+        }
+        let s = 10;
+        let inp = document.querySelector('input');
+        inp.addEventListener('input', debounce(handler, 2000).bind(null,s))      //传参
+    </script>
+
+    <script>        //节流 连续触发事件但是在 n 秒中只执行一次函数。
+        function handler(x) {
+            console.log('这是节流的回调函数，点击后2秒只执行一次',x);
+        }
+
+        // 节流函数
+        function throttle(callBack,time){
+            let lock = true;
+            return function(...args){
+                if (lock) {
+                    lock = false;
+                    setTimeout(()=>{
+                        lock = true;
+                        callBack.apply(this,args)
+                    },time)
+                }
+            }
+        }
+
+        let num = 100;
+        let btn = document.querySelector('button');
+        btn.addEventListener('click',throttle(handler,2000).bind(btn,num))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+//out:../css/
+
+/* 版心公共类 */
+.container {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/* ---------------------------头部模块 */
+/* 快捷菜单模块 */
+.xtx-shortcut {
+    height: 52px;
+    background-color: #333;
+
+    .container {
+        height: 52px;
+        // background-color: skyblue;
+
+        ul {
+
+            li {
+                float: left;
+                line-height: 52px;
+                color: #666;
+
+                a {
+                    margin-left: 16px;
+                    margin-right: 16px;
+                    font-size: 14px;
+                    color: #dcdcdc;
+                }
+
+                &:last-child {
+                    a {
+                        margin-right: 0px;
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            margin-right: 8px;
+                            margin-top: -2px;
+                            width: 11px;
+                            height: 16px;
+                            vertical-align: middle;
+                            // background-color: pink;
+                            background-image: url('../images/sprites.png');
+                            background-position: -160px -70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* 主导航模块 */
+.xtx-main-nav {
+    height: 130px;
+    box-sizing: border-box;
+    padding-top: 30px;
+
+    /* logo */
+    .logo {
+        width: 207px;
+        height: 70px;
+        margin-left: 25px;
+        
+        a {
+            display: block;
+            height: 100%;
+            font-size: 0px;
+            background-image: url('../images/logo.png');
+            background-size: contain;
+        }
+    }
+
+    /* 导航栏 */
+    nav {
+        margin-left: 40px;
+        // background-color: skyblue;
+
+        li {
+            float: left;
+            height: 70px;
+            margin-right: 48px;
+            line-height: 70px;
+
+            &:last-child {
+                margin-right: 0px;
+            }
+
+            a {
+                padding-bottom: 7px;
+
+                &:hover {
+                    color: #27ba9b;
+                    border-bottom: 1px solid #27ba9b;
+                }
+            }
+        }
+    }
+
+    /* 搜索框 */
+    .search {
+        position: relative;
+        width: 172px;
+        height: 30px;
+        margin-top: 24px;
+        margin-left: 82px;
+        // background-color: pink;
+
+        &::before {
+            position: absolute;
+            left: 0px;
+            top: 4px;
+            content: ''; 
+            width: 18px;
+            height: 18px;
+            background-image: url('../images/sprites.png');
+            background-position: -80px -70px;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding-left: 31px;
+            border-bottom: 2px solid #e7e7e7;
+        }
+    }
+
+    /* 购物车 */
+    .cart {
+
+        a {
+            position: relative;
+            display: block;
+            width: 23px;
+            height: 23px;
+            margin-top: 28px;
+            margin-left: 15px;
+            background-image: url('../images/sprites.png');
+            background-position: -120px -70px;
+            // background-color: powderblue;
+        }
+
+        span {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            width: 20px;
+	        height: 15px;
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+            line-height: 15px;
+	        background-color: #e26237;
+	        border-radius: 8px;
+        }
+    }
+}
+
+
+/* ----------------------------底部模块 */
+/* 联系方式 */
+.contact {
+    height: 302px;
+
+    /* 客户服务 */
+    .customer-service {
+        box-sizing: border-box;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        padding-top: 80px;
+        // background-color: skyblue;
+
+        p {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 35px;
+        }
+
+        div {
+            a {
+                display: inline-block;
+                box-sizing: border-box;
+                width: 93px;
+                height: 92px;
+                border: 1px solid #eee;
+                text-align: center;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    // background-color: pink;
+                    width: 29px;
+                    height: 27px;
+                    margin: 22px auto 10px;
+                    background-image: url('../images/sprites.png');
+                }
+
+                &:first-child::before {
+                    background-position: -250px -70px;
+                }
+
+                &:last-child::before {
+                    background-position: -350px -70px;
+                }
+
+                &:first-child:hover {
+                    &:first-child::before {
+                        background-position: -205px -70px;
+                    }
+                }
+
+                &:last-child:hover {
+                    &:last-child::before {
+                        background-position: -300px -70px;
+                    }
+                }
+
+                span {
+                    font-size: 14px;
+                    color: #999 ;
+                }
+
+            }
+        }
+    }
+
+    /* 关注我们 */
+    .follow-us {
+        box-sizing: border-box;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        padding-top: 80px;
+        // background-color: skyblue;
+
+        p {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 35px;
+        }
+
+        div {
+            a {
+                display: inline-block;
+                box-sizing: border-box;
+                width: 93px;
+                height: 92px;
+                border: 1px solid #eee;
+                text-align: center;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    // background-color: pink;
+                    width: 36px;
+                    height: 29px;
+                    margin: 22px auto 10px;
+                    background-image: url('../images/sprites.png');
+                }
+
+                &:first-child::before {
+                    background-position: -250px -15px;
+                }
+
+                &:last-child::before {
+                    background-position: -350px -15px;
+                }
+
+                &:first-child:hover {
+                    &:first-child::before {
+                        background-position: -205px -15px;
+                    }
+                }
+
+                &:last-child:hover {
+                    &:last-child::before {
+                        background-position: -300px -15px;
+                    }
+                }
+
+                span {
+                    font-size: 14px;
+                    color: #999 ;
+                }
+
+            }
+        }
+    }
+
+    /* 下载方式 */
+    .download {
+        box-sizing: border-box;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        padding-top: 80px;
+
+        h5 {
+            font-size: 16px;
+            font-weight: normal;
+            color: #999;
+            margin-bottom: 24px;
+        }
+
+        .code {
+            box-sizing: border-box;
+            width: 116px;
+            height: 116px;
+            margin-left: 40px;
+            padding: 6px 4px;
+            border: 1px solid #f3f3f3;
+            background-image: url('../uploads/qrcode.png');
+            background-size: contain;
+        }
+
+        .download-button {
+            box-sizing: border-box;
+            width: 120px;
+            height: 116px;
+            padding-left: 20px;
+            // background-color: skyblue;
+
+            p {
+                font-size: 14px;
+                color: #999;
+                text-align: left;
+
+                &:first-child {
+                    margin-bottom: 8px;
+                }
+            }
+
+            button {
+                width: 103px;
+                height: 32px;
+                margin-top: 18px;
+                background-color: #27ba9b;  
+                border: none;
+                font-size: 14px;
+                color: #fff;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    /* 服务热线 */
+    .hotline {
+        box-sizing: border-box;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        padding-top: 80px;
+
+        h5 {
+            font-size: 16px;
+            font-weight: normal;
+            color: #999;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 22px;
+            color: #666;
+            margin-top: 58px;
+            line-height: 34px;
+        }
+
+        span {
+            font-size: 15px;
+            color: #999;
+        }
+
+    }
+}
+
+
+/* 宣传服务 */
+.xtx-service {
+    height: 174px;
+    background-color: #333;
+
+    .container {
+        width: 1393px;
+        height: 173px;
+        border-bottom: 1px solid #434343;
+
+        a {
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            text-align: center;
+            line-height: 173px;
+            font-size: 28px;
+            color: #fff;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 58px;
+                height: 58px;
+                margin-right: 19px;
+                vertical-align: middle;
+                background-image: url('../images/sprites.png');
+            }
+
+            &:nth-child(2)::before {
+                background-position: -130px 0;
+            }
+
+            &:nth-child(3)::before {
+                background-position: -65px 0;
+            }
+        }
+    }
+}
+
+/* 版权信息 */
+.copyright {
+    box-sizing: border-box;
+    padding-top: 40px;
+    height: 170px;
+    background-color: #333;
+    text-align: center;
+
+
+    p {
+        color: #999;
+        font-size: 14px;
+
+        &:first-child {
+            line-height: 35px;
+        }
+
+        a {
+            color: #999;
+        }
+    }
+}

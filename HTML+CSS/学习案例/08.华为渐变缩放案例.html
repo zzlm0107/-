@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华为渐变缩放案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            overflow: hidden;
+            width: 500px;
+            height: 350px;
+            margin: 100px auto;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s;
+        }
+
+        .box a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        .box a .txt {
+            box-sizing: border-box;
+            position: absolute;
+            left: 0px;
+            bottom: -18%;
+            width: 500px;
+            height: 150px;
+            padding-left: 30px;
+            transition: all 0.5s;
+            z-index: 1;
+        }
+
+        .box .txt p {
+            color: white;
+            text-decoration: none;
+        }
+
+        .box .txt p:nth-child(1) {
+            height: 28px;
+            font-size: 14px;
+        }
+
+        .box .txt p:nth-child(2) {
+            font-size: 22px;
+        }
+
+        .box .txt p:nth-child(3) {
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        .box .mask {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 350px;
+            background-image: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.6)
+            );
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .box:hover img {
+            transform: scale(1.15);
+        }
+
+        .box:hover .mask {
+            opacity: 1;
+        }
+
+        .box:hover .txt {
+            transform: translateY(-60px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../学习图片/08.images/huawei1.jpeg" alt="">
+        <a href="#">
+            <div class="txt">
+                <p>行业洞察</p>
+                <p>迈向智能世界2030</p>
+                <p>了解更多</p>
+            </div>
+        </a>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

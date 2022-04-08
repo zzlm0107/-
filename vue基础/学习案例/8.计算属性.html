@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div class="box">
+        姓: <input type="text" v-model="firstname">
+        <br><br>
+        名: <input type="text" v-model="lastname">
+        <br><br>
+        <!-- 每次使用方法时都会重新调用,方法不依赖缓存-->
+        <!-- 姓名: <span>{{name()}}</span> -->
+
+        <!-- 计算属性  依赖缓存，仅数据变化时再调用-->
+        <!-- 计算属性最终会出现在vm上，直接调用即可 -->
+        姓名: <span>{{fullname}}</span>
+    </div>
+    <br><br><br><br>
+
+
+
+    <div class="root">
+        <h2>今天天气很{{info}}</h2>
+        <button @click="changeWeather">切换按钮</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+
+        var vm = new Vue({
+            el:'.box',
+            data:{
+                firstname:'张',
+                lastname:'三',    
+            },
+            methods: {
+                name(){
+                    return this.firstname + '-' + this.lastname;
+                }
+            },
+            computed: {
+                // 完整写法
+
+                // fullname:{
+                    // //get 初次读取和所依赖的数据发生变化时会重新调用get
+                    // get(){
+                    //     console.log('get被调用了');
+                    //     return this.firstname + '-' + this.lastname;
+                    // },
+
+                    // // set 当计算的属性被修改时会调用set
+                    // set(value){
+                    //     const arr = value.split('-');
+                    //     this.firstname = arr[0];
+                    //     this.lastname = arr[1];
+                    // }
+                // }
+
+
+                // 简写形式（仅当只需读取不需修改时）
+                // 形为函数，但实际上是计算出来了一个属性然后放到vm上直接使用
+                fullname(){
+                    return this.firstname + '-' + this.lastname;
+                }
+            },
+
+        })
+
+
+
+        var mvvm = new Vue({
+            el:'.root',
+            data:{
+                isHot:true,
+            },
+            computed: {
+                info(){
+                    return this.isHot ? '炎热' : '凉爽';
+                }    
+            },
+            methods: {
+                changeWeather(){
+                    this.isHot = !this.isHot;
+                }
+            },
+        })
+    </script>
+</body>
+</html>

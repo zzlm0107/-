@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div class="root">
+        <!-- 遍历数组 -->
+        <h2>人员列表</h2>
+        <ul>
+            <!-- 先对象，再索引 -->
+            <li v-for="(p, index) in arr" :key="index">
+                {{p.name}}-----{{p.age}}
+            </li>
+        </ul>
+
+
+        <!-- 遍历对象 -->
+        <h2>手机信息</h2>
+        <ul>
+            <!-- 先值，再键 -->
+            <li v-for="(value, key) in obj " :key="key">
+                {{key}}-----{{value}}
+            </li>
+        </ul>
+
+
+        <!-- 遍历字符串 -->
+        <h2>字符串</h2>
+        <ul>
+            <!-- 先值，再键 -->
+            <li v-for="(char, index) in str" :key="index">
+                {{char}}-----{{index}}
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+        var vm = new Vue({
+            el:'.root',
+            data:{
+                arr:[
+                    {id:'01',name:'张三',age:18},
+                    {id:'02',name:'李四',age:19},
+                    {id:'03',name:'王五',age:20},
+                ],
+
+                obj:{
+                    name:'huawei',
+                    price:2000,
+                    color:'blue',
+                },
+
+                str:'hello',
+            },
+        })
+    </script>
+</body>
+</html>

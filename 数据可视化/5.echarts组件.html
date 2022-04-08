@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.2/echarts.js"></script>
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+<script>
+  let box = document.querySelector('.box');
+  let myEchart = echarts.init(box);
+  //配置
+  myEchart.setOption({
+    //数据集配置
+    dataset: {
+      source: [
+        ['游戏', 10, 15],
+        ['电视', 15, 35],
+        ['电影', 3, 14],
+        ['直播', 20, 20],
+      ]
+    },
+    title: {
+      text: 'echarts组件',
+      left: 'left'
+    },
+    // 提示组件
+    tooltip: {},
+    // 图例组件
+    legend: {
+      data: ['折线图', '柱状图']
+    },
+    //工具栏组件
+    toolbox: {
+      show: true,
+      feature: {
+        dataZoom: {
+          yAxisIndex: "none"
+        },
+        dataView: {
+          readOnly: false
+        },
+        magicType: {
+          type: ["line", "bar"]
+        },
+        restore: {},
+        saveAsImage: {}
+      }
+    },
+    xAxis: {
+      name: '物品',
+      data: ['游戏', '电视', '电影', '直播']
+    },
+    yAxis: {
+
+    },
+    series: [
+      {
+        name: '柱状图',
+        type: 'bar',
+        encode: {
+          y: 1
+        }
+      },
+      {
+        name: '折线图',
+        type: 'line',
+        encode: {
+          y: 2
+        }
+      }
+    ]
+  })
+</script>
+
+</html>

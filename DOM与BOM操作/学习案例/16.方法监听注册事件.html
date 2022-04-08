@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <br><br>
+    <button>按钮</button>
+
+    <script>
+        var btn = document.querySelector('button');
+        var box = document.querySelector('.box'); 
+        // 方法监听注册事件
+        btn.addEventListener('click',fn)
+        function fn() {
+            box.style.backgroundColor = 'pink';
+        }
+
+        // 移除事件
+        btn.removeEventListener('click',fn)
+    </script>
+</body>
+</html>

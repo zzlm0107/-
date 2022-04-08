@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <button>b站</button>
+
+    <script>
+        var btns = document.querySelectorAll('button');
+
+        btns[0].addEventListener('click',function() {
+            var time = 5;
+            this.disabled = true;
+            var timer = setInterval(function() {
+                if(time == 0){
+                    location.href = 'http://www.baidu.com';
+                }else{
+                    this.innerHTML = '将在'+ time + '秒后跳转到百度';
+                    time--;
+                }
+            },1000)
+        })
+
+        btns[1].addEventListener('click',function() {
+            location.assign('http://www.bilibili.com');     //记录浏览历史
+            // location.replace('http://www.bilibili.com');     不记录浏览历史
+            // location.reload();   刷新页面
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微金所导航案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            box-sizing: border-box;
+            height: 40px;
+            border-top: 1px solid #dcdde1;
+            border-bottom: 1px solid #dcdde1;
+        }
+
+        ul {
+            list-style: none;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            float: left;
+            box-sizing: border-box;
+            height: 40px;
+            width: 20%;
+            border-right: 1px solid #dcdde1;
+        }
+
+        ul li a {
+           display: block;
+           text-decoration: none;
+           text-align: center;
+           line-height: 40px;
+           color: black;
+        }
+
+        ul li:last-child {
+            border-right: none;
+        }
+
+        ul .app {
+            position: relative;
+        }
+
+        ul .app .code {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid #dcdde1;
+            display: none;
+        }
+
+        ul .app:hover .code {
+            display: block;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">我要投资</a></li>
+            <li><a href="#">平台介绍</a></li>
+            <li><a href="#">新手专区</a></li>
+            <li><a href="#" class="app">手机微金所<img src="./07.images/code.jpg" alt="" class="code"></a></li>
+            <li><a href="#">个人中心</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建数组，两种方法
+        var arr = new Array();
+        arr[0] = 1;
+        arr[1] = 5;
+        arr[2] = 3;
+        var num = [5,1,8,3,4];
+
+        bubbleSort(num);
+        bubbleSort(arr);
+
+
+
+        //冒泡排序函数,普通函数声明
+       function bubbleSort (number) {
+        for (var i=0; i<number.length; i++)
+        {
+            var flag =false;
+            for(var j=0; j<number.length-1-i; j++)
+            {
+                if(number[j]>number[j+1])
+                {
+                    var temp = number[j];
+                    number[j] = number[j+1];
+                    number[j+1] = temp;
+                    flag = true;
+                }
+            }
+            if(flag==false)
+                break;
+        }
+        console.log(number);
+       }
+
+
+       //函数表达式，匿名函数
+       var sum = function(num1,num2){
+        var sum=0;
+        for(num1; num1<=num2; num1++)
+            sum+=num1;
+        
+        return sum;
+       }
+
+       console.log( sum(1,100) );
+
+    </script>
+</body>
+</html>

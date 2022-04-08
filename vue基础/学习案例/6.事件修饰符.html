@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div class="box">
+        <!-- 常见的事件修饰符
+        .stop
+        .prevent
+        .capture
+        .self
+        .once
+        .passive -->
+
+        <!-- 阻止事件默认行为 -->
+        <a href="http://www.bilibili.com" @click.prevent>点击跳转B站</a>
+
+        <!-- 事件只触发一次 -->
+        <button @click.once="tip">点击弹窗</button>
+
+        <br><br>
+        <!-- 阻止冒泡 -->
+        <div @click="tip">
+            <button @click.stop="tip">点击冒泡</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+        var vm = new Vue({
+            el:'.box',
+            data:{
+
+            },
+            methods:{
+                tip:function(){
+                    alert('hello');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

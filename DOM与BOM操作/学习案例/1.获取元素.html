@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="test"></div>
+
+
+    <script>
+        //通过id获取元素
+        var by_id = document.getElementById('test');
+        console.log(by_id);
+
+        //通过标签名获取元素，获取到全部标签名元素，以伪数组形式存在
+        var divs = document.getElementsByTagName('div');
+        console.log(divs);
+        console.log(divs[0]);
+
+        //通过类名获取元素,获取到全部类名元素，以伪数组形式存在
+        var classes = document.getElementsByClassName('box');
+        console.log(classes);
+        console.log(classes[0]);
+
+        //获取到指定选择器的第一个元素对象
+        var first_box1 = document.querySelector('div');
+        var first_box2 = document.querySelector('.box');
+        var first_box3 = document.querySelector('#test');
+        console.log(first_box1);
+        console.log(first_box2);
+        console.log(first_box3);
+
+        //获取到指定选择器的全部对象，以伪数组形式存在
+        var all_box = document.querySelectorAll('div');
+        console.log(all_box);
+
+        //获取body和html标签
+        var bodyElement = document.body;
+        console.log(bodyElement);
+        var htmlElement = document.documentElement;
+        console.log(htmlElement);
+
+        
+    </script>
+</body>
+</html>

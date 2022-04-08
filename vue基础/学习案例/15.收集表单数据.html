@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div class="root">
+        <form @submit.prevent="demo">
+            <label for="account" >账户:</label>
+            <input type="number" id="account" v-model.number="userInfo.account"><br><br><br>
+            <label for="psd">密码:</label>
+            <input type="password" id="psd" v-model.trim="userInfo.psd"><br><br><br>
+
+            性别:   男<input type="radio" name="sex" value="male" v-model="userInfo.sex">
+                    女<input type="radio" name="sex" value="female" v-model="userInfo.sex">
+            <br><br><br>
+
+            爱好:   吃饭<input type="checkbox" value="study" v-model="userInfo.hobby">
+                    睡觉<input type="checkbox" value="sleep" v-model="userInfo.hobby">
+                    打豆豆<input type="checkbox" value="play" v-model="userInfo.hobby">
+            <br><br><br>
+
+            居住城市:   <select v-model="userInfo.city">
+                            <option disabled value="">请选择城市</option>
+                            <option value="beijing">北京</option>
+                            <option value="shanghai">上海</option>
+                            <option value="guangzhou">广州</option>
+                        </select>
+            <br><br><br>
+
+            其他信息: <br>
+            <textarea cols="30" rows="10" v-model.lazy="userInfo.other"></textarea>
+            <br><br>
+
+            <input type="checkbox" v-model="userInfo.agree">接受《用户协议》
+            <br><br>
+            <button>提交</button>
+        </form>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el:'.root',
+            data:{
+                userInfo:{
+                    account:'',
+                psd:'',
+                sex:'male',
+                hobby:[],
+                city:'',
+                other:'',
+                agree:'',
+                }
+            },
+            methods: {
+                demo:function(){
+                    console.log(JSON.stringify(this.userInfo));
+                }
+            },
+        })
+        
+    </script>
+</body>
+</html>

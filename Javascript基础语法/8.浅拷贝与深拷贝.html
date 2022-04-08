@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let oldobj = {
+            a: 1,
+            b: [1, 3, 2, 10],
+            c: {
+                d: 'nihao',
+                e: {
+                    f: 80,
+                    g:function(){
+                        alert('hhh');
+                    }
+                }
+            }
+        }
+        let newobj = {}
+
+        //浅拷贝
+        /* Object.assign(newobj,oldobj);
+        oldobj.c.e.f = 100
+        console.log(newobj); */
+
+        //深拷贝(递归)
+        function deepcopy (newobj,oldobj){
+            for(let k in oldobj){
+                let item = oldobj[k];       //获取到属性值
+                if (item instanceof Array) {        //判断是不是数组
+                    newobj[k] = [];
+                    deepcopy(newobj[k],item);
+                }else if (item instanceof Object) { //判断是不是对象
+                    newobj[k] = {};
+                    deepcopy(newobj[k],item);
+                }else{
+                    newobj[k] = item;           //简单数据类型
+                }
+            }
+        }
+
+        //深拷贝（json字符串转换）
+        function jsoncopy(oldobj) {
+            // console.log(jsonobj);
+            return JSON.parse( JSON.stringify(oldobj) );
+        }
+
+        deepcopy(newobj,oldobj);
+        oldobj.c.e.f = 100
+        console.log(newobj);
+        // console.log(deepcopy instanceof Object);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+//out:../css/
+
+@import './base.less';
+
+@vw: 3.75vw;
+@color:#fb7299;
+
+
+/*------------------------------头部固定*/
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: (84 / @vw);
+    background-color: white;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: (44 / @vw);
+        padding-left: (18 / @vw);
+        padding-right: (12 / @vw);
+
+        .logo {
+            .iconfont {
+                font-size: (28/ @vw);
+                color: @color;
+            }
+        }
+
+        .others {
+            display: flex;
+            a:nth-child(1) {
+                .iconfont {
+                    font-size: (22 / @vw);
+                    color: #ccc;
+                }
+            }
+
+            a:nth-child(2) {
+                width: (24 / @vw);
+                height: (24 / @vw);
+                margin-left: (24 / @vw);
+            }
+
+            a:nth-child(3) {
+                width: (72 / @vw);
+                height: (24 / @vw);
+                margin-left: (24 / @vw);
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        height: (40 / @vw);
+        border-bottom: 1px solid #eee;
+
+        .tab {
+            ul {
+                display: flex;
+
+                li {
+                    padding: 0 (16 / @vw);
+
+                    a {
+                        display: block;
+                        height: (38 / @vw);
+                        line-height: (38 / @vw);
+                        font-size: (14 / @vw);
+                        &.current {
+                            color: @color;
+                            border-bottom: 2px solid @color;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .more {
+            a {
+                display: block;
+                width: (40 / @vw);
+                height: (40 / @vw);
+                text-align: center;
+                line-height: (40 / @vw);
+                color: #ccc;
+
+                .iconfont {
+                    font-size: (22 / @vw);
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------视频主题模块*/
+.video-content {
+    padding:  (84 / @vw) (5 / @vw) 0;
+
+    .video-list1 {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+            width: 50%;
+            padding: (8 / @vw) (5 / @vw);
+            font-size: (12 / @vw);
+
+            .pic {
+                position: relative;
+                
+                .count {
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    padding: (8 / @vw);
+                    color: white;
+                    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+
+                    .iconfont {
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .txt {
+                margin-top: (5 / @vw);
+            }
+        }
+    }
+}

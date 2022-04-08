@@ -1,0 +1,103 @@
+/* -------------------------网站入口 */
+.xtx-entry {
+  height: 500px;
+  background-color: #f5f5f5;
+}
+.xtx-entry .container {
+  height: 500px;
+  position: relative;
+  /* 商品分类侧边栏 */
+  /* 左右箭头 */
+}
+.xtx-entry .container .category {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 250px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.xtx-entry .container .category li {
+  padding-left: 36px;
+  line-height: 50px;
+}
+.xtx-entry .container .category li:hover {
+  background-color: #27ba9b;
+}
+.xtx-entry .container .category li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  color: #fff;
+}
+.xtx-entry .container .category li a span {
+  margin-left: 15px;
+  font-size: 14px;
+}
+.xtx-entry .container .category li a::after {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  content: '';
+  width: 6px;
+  height: 11px;
+  background-image: url('../images/sprites.png');
+  background-position: -80px -110px;
+}
+.xtx-entry .container .prev {
+  position: absolute;
+  top: 228px;
+  left: 260px;
+  width: 45px;
+  height: 45px;
+  background-image: url('../images/sprites.png');
+  background-position: 12px -60px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.xtx-entry .container .next {
+  position: absolute;
+  top: 228px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  background-image: url('../images/sprites.png');
+  background-position: -24px -60px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+/* 新鲜好物模块 */
+.xtx-new-goods {
+  height: 520px;
+}
+.xtx-new-goods .title {
+  height: 115px;
+}
+.xtx-new-goods .title h3 {
+  display: inline-block;
+  font-size: 29px;
+  font-weight: normal;
+  margin-top: 48px;
+  margin-right: 34px;
+}
+.xtx-new-goods .title .desc {
+  font-size: 16px;
+  color: #999;
+  margin-right: 874px;
+}
+.xtx-new-goods .title a {
+  font-size: 16px;
+  color: #999;
+}
+.xtx-new-goods .title a::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background-image: url('../images/sprites.png');
+  background-position: 0px -110px;
+  vertical-align: middle;
+  margin-left: 3px;
+}

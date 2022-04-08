@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>爆炸按钮</button>
+    <button>停止爆炸按钮</button>
+    <button>定时炸弹</button>
+
+    <script>
+        var btns = document.querySelectorAll('button');
+        var boom;
+        btns[0].addEventListener('click',function() {
+            boom = setTimeout(callback,3000);
+            function callback() {
+                alert('爆炸了');
+            }
+        })
+
+        btns[1].addEventListener('click',function() {
+            clearTimeout(boom);
+        })
+
+        btns[2].addEventListener('click',function() {
+            var i = 10;
+            var bm = setInterval(callback,1000);
+            function callback() {
+                console.log(i);
+                i--;
+
+                if(i == 0){
+                    console.log('炸弹已经爆炸');
+                    clearInterval(bm);
+                }
+            }
+
+            
+        })
+
+    </script>
+</body>
+</html>

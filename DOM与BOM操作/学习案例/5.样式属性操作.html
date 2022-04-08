@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 360px;
+            height: 30px;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="password">
+        <span class="msg">请输入6~15位的密码</span>
+    </div>
+    
+
+    <script>
+        var input = document.querySelector('input');
+        var msg = document.querySelector('.msg');
+
+        // 两种样式修改方式，style和className
+        input.onblur = function() {
+            if(this.value.length<6||this.value.length>15){
+                // msg.innerHTML = '密码长度不正确';
+                msg.className = 'msg wrong';
+            }else{
+                msg.innerHTML = '密码长度正确';
+                msg.style.color = 'green';
+            }
+        }
+
+    </script>
+</body>
+</html>

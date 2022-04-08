@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let number = 11;
+        let person = {
+            name:'andy',
+            age:18,
+        }
+
+        Object.defineProperty(person,'id',{
+            // value:'男',
+            // enumerable:true,
+            // writable:true,
+            // configurable:true,
+
+            // 当读取了person的id属性时，就会调用get方法
+            get(){
+                console.log('读取了id属性');
+                return number;
+            },
+
+            // 当修改了person的id属性时，就会调用get方法,返回值为修改的值
+            set(value){
+                console.log('修改了id为'+value);
+                number = value;
+            }
+        })
+
+        console.log(person);
+
+        // 以数组方式枚举一个对象上的所有属性名
+        console.log(Object.keys(person));
+
+
+        //简单数据代理
+        // data
+        let obj1 = {x:100};
+        // vm
+        let obj2 = {y:200};
+
+        Object.defineProperty(obj2,'x',{
+            get(){
+                return obj1.x;
+            },
+            set(value){
+                obj1.x = value;                
+            }
+        })
+
+    </script>
+</body>
+</html>

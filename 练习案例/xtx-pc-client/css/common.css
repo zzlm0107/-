@@ -1,0 +1,347 @@
+/* 版心公共类 */
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+/* ---------------------------头部模块 */
+/* 快捷菜单模块 */
+.xtx-shortcut {
+  height: 52px;
+  background-color: #333;
+}
+.xtx-shortcut .container {
+  height: 52px;
+}
+.xtx-shortcut .container ul li {
+  float: left;
+  line-height: 52px;
+  color: #666;
+}
+.xtx-shortcut .container ul li a {
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 14px;
+  color: #dcdcdc;
+}
+.xtx-shortcut .container ul li:last-child a {
+  margin-right: 0px;
+}
+.xtx-shortcut .container ul li:last-child a::before {
+  content: '';
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: -2px;
+  width: 11px;
+  height: 16px;
+  vertical-align: middle;
+  background-image: url('../images/sprites.png');
+  background-position: -160px -70px;
+}
+/* 主导航模块 */
+.xtx-main-nav {
+  height: 130px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  /* logo */
+  /* 导航栏 */
+  /* 搜索框 */
+  /* 购物车 */
+}
+.xtx-main-nav .logo {
+  width: 207px;
+  height: 70px;
+  margin-left: 25px;
+}
+.xtx-main-nav .logo a {
+  display: block;
+  height: 100%;
+  font-size: 0px;
+  background-image: url('../images/logo.png');
+  background-size: contain;
+}
+.xtx-main-nav nav {
+  margin-left: 40px;
+}
+.xtx-main-nav nav li {
+  float: left;
+  height: 70px;
+  margin-right: 48px;
+  line-height: 70px;
+}
+.xtx-main-nav nav li:last-child {
+  margin-right: 0px;
+}
+.xtx-main-nav nav li a {
+  padding-bottom: 7px;
+}
+.xtx-main-nav nav li a:hover {
+  color: #27ba9b;
+  border-bottom: 1px solid #27ba9b;
+}
+.xtx-main-nav .search {
+  position: relative;
+  width: 172px;
+  height: 30px;
+  margin-top: 24px;
+  margin-left: 82px;
+}
+.xtx-main-nav .search::before {
+  position: absolute;
+  left: 0px;
+  top: 4px;
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-image: url('../images/sprites.png');
+  background-position: -80px -70px;
+}
+.xtx-main-nav .search input {
+  width: 100%;
+  height: 100%;
+  padding-left: 31px;
+  border-bottom: 2px solid #e7e7e7;
+}
+.xtx-main-nav .cart a {
+  position: relative;
+  display: block;
+  width: 23px;
+  height: 23px;
+  margin-top: 28px;
+  margin-left: 15px;
+  background-image: url('../images/sprites.png');
+  background-position: -120px -70px;
+}
+.xtx-main-nav .cart span {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 20px;
+  height: 15px;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  line-height: 15px;
+  background-color: #e26237;
+  border-radius: 8px;
+}
+/* ----------------------------底部模块 */
+/* 联系方式 */
+.contact {
+  height: 302px;
+  /* 客户服务 */
+  /* 关注我们 */
+  /* 下载方式 */
+  /* 服务热线 */
+}
+.contact .customer-service {
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  padding-top: 80px;
+}
+.contact .customer-service p {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 35px;
+}
+.contact .customer-service div a {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 93px;
+  height: 92px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+.contact .customer-service div a::before {
+  content: '';
+  display: block;
+  width: 29px;
+  height: 27px;
+  margin: 22px auto 10px;
+  background-image: url('../images/sprites.png');
+}
+.contact .customer-service div a:first-child::before {
+  background-position: -250px -70px;
+}
+.contact .customer-service div a:last-child::before {
+  background-position: -350px -70px;
+}
+.contact .customer-service div a:first-child:hover:first-child::before {
+  background-position: -205px -70px;
+}
+.contact .customer-service div a:last-child:hover:last-child::before {
+  background-position: -300px -70px;
+}
+.contact .customer-service div a span {
+  font-size: 14px;
+  color: #999;
+}
+.contact .follow-us {
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  padding-top: 80px;
+}
+.contact .follow-us p {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 35px;
+}
+.contact .follow-us div a {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 93px;
+  height: 92px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+.contact .follow-us div a::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 29px;
+  margin: 22px auto 10px;
+  background-image: url('../images/sprites.png');
+}
+.contact .follow-us div a:first-child::before {
+  background-position: -250px -15px;
+}
+.contact .follow-us div a:last-child::before {
+  background-position: -350px -15px;
+}
+.contact .follow-us div a:first-child:hover:first-child::before {
+  background-position: -205px -15px;
+}
+.contact .follow-us div a:last-child:hover:last-child::before {
+  background-position: -300px -15px;
+}
+.contact .follow-us div a span {
+  font-size: 14px;
+  color: #999;
+}
+.contact .download {
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  padding-top: 80px;
+}
+.contact .download h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+  margin-bottom: 24px;
+}
+.contact .download .code {
+  box-sizing: border-box;
+  width: 116px;
+  height: 116px;
+  margin-left: 40px;
+  padding: 6px 4px;
+  border: 1px solid #f3f3f3;
+  background-image: url('../uploads/qrcode.png');
+  background-size: contain;
+}
+.contact .download .download-button {
+  box-sizing: border-box;
+  width: 120px;
+  height: 116px;
+  padding-left: 20px;
+}
+.contact .download .download-button p {
+  font-size: 14px;
+  color: #999;
+  text-align: left;
+}
+.contact .download .download-button p:first-child {
+  margin-bottom: 8px;
+}
+.contact .download .download-button button {
+  width: 103px;
+  height: 32px;
+  margin-top: 18px;
+  background-color: #27ba9b;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+}
+.contact .download .download-button button:hover {
+  cursor: pointer;
+}
+.contact .hotline {
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  padding-top: 80px;
+}
+.contact .hotline h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+  margin-bottom: 24px;
+}
+.contact .hotline p {
+  font-size: 22px;
+  color: #666;
+  margin-top: 58px;
+  line-height: 34px;
+}
+.contact .hotline span {
+  font-size: 15px;
+  color: #999;
+}
+/* 宣传服务 */
+.xtx-service {
+  height: 174px;
+  background-color: #333;
+}
+.xtx-service .container {
+  width: 1393px;
+  height: 173px;
+  border-bottom: 1px solid #434343;
+}
+.xtx-service .container a {
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  text-align: center;
+  line-height: 173px;
+  font-size: 28px;
+  color: #fff;
+}
+.xtx-service .container a::before {
+  content: '';
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  margin-right: 19px;
+  vertical-align: middle;
+  background-image: url('../images/sprites.png');
+}
+.xtx-service .container a:nth-child(2)::before {
+  background-position: -130px 0;
+}
+.xtx-service .container a:nth-child(3)::before {
+  background-position: -65px 0;
+}
+/* 版权信息 */
+.copyright {
+  box-sizing: border-box;
+  padding-top: 40px;
+  height: 170px;
+  background-color: #333;
+  text-align: center;
+}
+.copyright p {
+  color: #999;
+  font-size: 14px;
+}
+.copyright p:first-child {
+  line-height: 35px;
+}
+.copyright p a {
+  color: #999;
+}

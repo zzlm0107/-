@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.2/echarts.js"></script>
+  <title>Document</title>
+  <style>
+    .box {
+      width: 1000px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+
+<script>
+  let box = document.querySelector('.box');
+  //创建echars实例
+  let myEchart = echarts.init(box);
+  //配置
+  myEchart.setOption({
+    //图表标题的配置
+    title: {
+      text: '数据可视化',
+      left: 'center'
+    },
+    //x轴的配置
+    xAxis: {
+      name: '物品',
+      data: ['视频','食物','游戏','吃饭']
+    },
+    //y轴配置项
+    yAxis: {
+      name: '次数',
+      axisLine: {
+        show: true
+      }
+    },
+    //系列设置
+    series: [
+      {
+        type: 'bar',
+        data: [10,20,35,15]
+      },
+      {
+        type: 'line',
+        data: [10,20,35,15]
+      },
+    ]
+  })
+</script>
+</html>

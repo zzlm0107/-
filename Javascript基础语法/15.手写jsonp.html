@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const jsonp = function (url, data) {
+            //随机回调函数名
+            let callbackName = 'jsonp_' + Date.now();
+            url = `${url}?callback=${callbackName}`
+
+            //看是否有数据需要携带
+            if (data) {
+                for (let k in data) {
+                    url += `&${k}=${data[k]}`
+                }
+            }
+
+            //创建script标签
+            let script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+
+            //返回promise实例
+            return new Promise((resolve, reject) => {
+                window[callbackName] = result => {
+                    try {
+                        resolve(result)
+                    } catch (err) {
+                        reject(err)
+                    } finally {
+                        // 移除script元素和绑定的事件
+                        delete window[callbackName]
+                        document.body.removeChild(script)
+                    }
+                }
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>

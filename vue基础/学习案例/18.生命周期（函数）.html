@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div class="root">
+        <h2>hello,{{name}}</h2>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+
+        new Vue({
+            el:'.root',
+            data: {
+                name:'andy'
+            },
+            methods: {
+                bye(){
+                    // 销毁Vue实例
+                    this.$destroy();
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate()，初始化生命周期和事件，但Vue实例还未创建');
+            },
+            created() {
+                console.log('created()，初始化数据检测和代理，Vue实例被创建了');
+            },
+            beforeMount() {
+                console.log('beforeMount(),元素挂载之前，页面显示未经Vue编译的DOM');
+            },
+            mounted() {
+                console.log('mounted(),元素挂载完毕，页面显示的是经Vue编译的DOM');
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate(),页面更新之前，数据是新的但页面是旧的');
+            },
+            updated() {
+                console.log('updated(),页面更新完毕，数据是新的页面也是新的');
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy(),调用了this.$destroy()后，销毁Vue实例之前，关闭定时器，取消订阅消息，解绑自定义事件');
+            },
+            destroyed() {
+                console.log('destroyed(),销毁了Vue实例');
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+
+
+
+    
+    <script>
+        Vue.config.productionTip = false;
+    
+        // 1.创建student组件
+        var student = Vue.extend({    
+            template:`
+                    <div>
+                        <h2>学生姓名:{{name}}</h2>
+                        <h2>学生年龄:{{age}}</h2>
+                    </div>
+            `,
+            data() {
+                return {
+                    name:'andy',
+                    age:18
+                }
+            },
+        })
+    
+        // 1.创建school组件
+        var school = Vue.extend({
+            template:`
+                <div>
+                    <h2>学校名称:{{schoolName}}</h2>
+                    <h2>学校地址:{{address}}</h2>
+                    <hr>
+                    <student></student>
+                </div>
+            `,
+            data() {
+                return {
+                    schoolName:'河北大学',
+                    address:'河北保定'
+                }
+            },
+            components:{
+                student,
+            }
+        })
+    
+        // 1.定义hello组件
+        var hello = Vue.extend({
+            template:`<div>{{msg}}</div>`,
+            data() {
+                return {
+                    msg:'Hello.Vue'
+                }
+            },
+        })
+    
+        // 定义app组件
+        var app = Vue.extend({
+            template:`
+                <div>
+                    <hello></hello>
+                    <school></school>
+                </div>
+            `,
+            components:{
+                hello,
+                school,
+            }
+        })
+    
+        // 创建vm
+        new Vue({
+            template:`<app></app>`,
+                el:'#root',
+                // 2.注册组件（局部注册）
+                components:{
+                    app,
+                }
+                
+            })
+    </script>
+</body>
+</html>

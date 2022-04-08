@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="1000" height="500"></canvas>
+</body>
+
+<script>
+  var canvas = document.getElementById('canvas');
+  // 获取画布的上下文，（笔）
+  var ctx = canvas.getContext('2d');
+
+  // 画一个三角形
+  //设置画笔起点
+  ctx.moveTo(100,100)
+  //设置画笔移动到的点
+  ctx.lineTo(500,100)
+  ctx.lineTo(100,400)
+  //闭合，连接起点和终点
+  ctx.closePath()
+  //设置图形填充颜色
+  ctx.fillStyle = 'skyblue';
+  //调用方法填充
+  ctx.fill()
+  //设置线段颜色
+  ctx.strokeStyle = 'orange';
+  //设置线条宽度
+  ctx.lineWidth = '5'
+  //开始画
+  ctx.stroke()
+
+
+
+  //画一个矩形
+  // 第一种方式  参数 x，y， width，height
+  ctx.strokeRect(600,100,200,350)
+  //第二种方式
+  ctx.fillRect(900,50,100,200)
+
+</script>
+
+</html>

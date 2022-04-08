@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 140px;
+            height: 140px;
+            background-image: url('../学习图片/09.images/bg.png');
+            animation: 
+                move 1s steps(12) infinite,
+                run 5s forwards
+                ;
+        }
+
+        @keyframes move {
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: -1680px 0;
+            }
+        }
+
+        @keyframes run {
+            form{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(1240px);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

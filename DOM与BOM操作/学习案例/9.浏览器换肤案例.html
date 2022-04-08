@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('../学习图片/1.jpg');
+            background-size:cover;
+        }
+
+        .box {
+            width: 410px;
+            margin: 100px auto;
+            background-color: #fff;
+        }
+
+        .box ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .box li {
+            padding-top: 4px;
+            cursor: pointer;
+        }
+
+        .box li img {
+            width: 100px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="../学习图片/1.jpg" alt=""></li>
+            <li><img src="../学习图片/2.jpg" alt=""></li>
+            <li><img src="../学习图片/3.jpg" alt=""></li>
+            <li><img src="../学习图片/4.jpg" alt=""></li> 
+        </ul>
+    </div>
+
+    <script>
+        var imgs = document.querySelectorAll('img');
+        var body = document.body;
+        for(var i=0; i<imgs.length; i++){
+            imgs[i].onclick = function() {
+                body.style.backgroundImage = 'url(' + this.src +')';
+            }
+        }
+    </script>
+</body>
+</html>

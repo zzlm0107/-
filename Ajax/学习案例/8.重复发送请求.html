@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送请求</button>
+    
+    <script>
+        var btn = document.querySelector('button');
+
+        let xhr = null;
+        //标识变量，判断前一个请求是否正在发送
+        let isSending = false;
+
+
+        btn.addEventListener('click',function () {
+            //当前一个请求正在发送时，再次请求就取消前一个请求
+            if(isSending === true)
+                xhr.abort();
+
+            xhr = new XMLHttpRequest();
+            //新的请求正在发送
+            isSending = true;
+
+            xhr.open('POST','http://127.0.0.1:8000/dealy');
+            xhr.send();
+
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4){
+                    //响应完毕，已经接收时
+                    isSending = false;
+
+                    if(xhr.status >= 200 && xhr.status < 300){
+                        console.log(xhr.response);
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

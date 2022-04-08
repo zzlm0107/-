@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue框架/vue.js"></script>
+    <style>
+        .normal {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .skyblue {
+            background-color: skyblue;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .one {
+            border-radius: 50%;
+        }
+
+        .two {
+            color: red;
+        }
+
+        .three {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <!-- 绑定class样式，字符串写法  直接指定样式时-->
+        <div class="normal" v-bind:class="changeStyle" @click="change">{{test}}</div>
+        <br><br><br>
+
+        <!-- 绑定class样式，数组写法 需要层叠样式时-->
+        <div class="normal" v-bind:class="all" @click="change">{{test}}</div>
+        <br><br><br>
+
+        <!-- 绑定class样式，对象写法  需要切换样式时 -->
+        <div class="normal" v-bind:class="classObj" @click="change">{{test}}</div>
+        <br><br><br>
+
+
+        <!-- 直接绑定style样式 -->
+        <div class="normal" v-bind:style="colorstyle" @click="change">{{test}}</div>
+
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+        var vm = new Vue({
+            el:'.root',
+            data:{
+                test:'测试',
+                changeStyle:'pink',
+
+                all:['one','two','three'],
+
+                classObj:{
+                    one:false,
+                    two:false,
+                    three:false
+                },
+                colorstyle:{
+                    color:'yellow',
+                }
+            },
+            methods: {
+                change(){
+                    let color = ['pink','skyblue','orange'];
+                    this.changeStyle = color[Math.floor(Math.random()*3)];
+                }
+            },
+        })
+    </script>
+</body>
+</html>
