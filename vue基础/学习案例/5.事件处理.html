@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <script src="../vue框架/vue.js"></script>
 </head>
+
 <body>
     <div class="box">
         <h1>{{number}}</h1>
@@ -22,20 +24,21 @@
         Vue.config.productionTip = false;
 
         var vm = new Vue({
-            el:'.box',
-            data:{
-                number:0,
+            el: '.box',
+            data: {
+                number: 0,
             },
             methods: {
                 // 方法接收参数
-              add:function(num,event){
-                  console.log(num);
-                  console.log(event);
-                  this.number++;
-              }  
+                add: function (num, event) {
+                    console.log(num);
+                    console.log(event);
+                    this.number++;
+                }
             }
         })
     </script>
 
 </body>
+
 </html>

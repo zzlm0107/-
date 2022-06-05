@@ -1,7 +1,11 @@
 var first = 'hello node.js';
 console.log(first);
 
-function fn () {
+function fn() {
     console.log('hello?');
 }
-fn();
+
+module.exports = {
+    first,
+    fn
+}

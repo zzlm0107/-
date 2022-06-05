@@ -170,16 +170,17 @@
         title.addEventListener('mousedown',function(e) {
             var x = e.pageX - login.offsetLeft;
             var y = e.pageY - login.offsetTop;
-
-            document.addEventListener('mousemove',move)
-
+            // 给document添加事件而不是title是为了解决移动过快鼠标移出title区域而不能拖动的bug
             function move(e) {
-                login.style.left = e.pageX - x + 'px';
-                login.style.top = e.pageY - y + 'px';
+                let changeX = e.pageX - x;
+                let changeY = e.pageY- y;
+                login.style.left = changeX + 'px';
+                login.style.top = changeY + 'px';
             }
-
-            document.addEventListener('mouseup',function() {
-                document.removeEventListener('mousemove',move);
+            document.addEventListener('mousemove',move)
+            //鼠标弹起时需要解绑事件
+            document.addEventListener('mouseup',function () {
+                document.removeEventListener('mousemove',move)
             })
         })
 

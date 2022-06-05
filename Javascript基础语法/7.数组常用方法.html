@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let arr = [1,4,63,8,20];
+        let arr1 = [0,1];
+        let str = '我是fw';
+
+        //数组拼接
+        // console.log(arr.concat(arr1));
+
+        //数组转字符串
+        // console.log(arr.join('-'));
+
+        //日期对象
+        // var date = new Date();
+        // console.log(date.getDate());
+
+        //数组检测方法
+        /* console.log(typeof arr);   //注意返回的是object
+        console.log(arr instanceof Array);
+        console.log(Array.isArray(arr));
+        console.log(Object.prototype.toString.call(arr)); */
+
+        //数组检查元素是否存在
+        console.log(arr.includes(4));
+        console.log(arr.indexOf(2));
+        console.log(arr.find(item => item === 8));
+
+
+        
+        //去除小数部分
+        console.log(Math.trunc(1.2233));
+        //判断是否为整数
+        console.log(Number.isInteger(12.123));
+
+        //数组排序
+        // console.log(arr.sort(function (a,b) {
+        //     return a - b;
+        // }));
+
+        //字符串方法
+        // console.log(str.replace('我','你'));
+        // console.log(str);
+        // console.log(str.split('f'));
+        
+    </script>
+</body>
+</html>

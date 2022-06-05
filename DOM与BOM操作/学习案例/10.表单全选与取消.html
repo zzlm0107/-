@@ -91,7 +91,6 @@
                     <td>Apple Watch</td>
                     <td>2000</td>
                 </tr>
-
             </tbody>
         </table>
     </div>
@@ -110,15 +109,18 @@
         }
 
         //控制单选按钮
+        // 下面的复选框要全部选中，上面的全选按钮才能够全部选中，给下面的所有复选框绑定事件，每次点击，都要循环查看下面下面所有的复选框是否有没选中的，如果有没选中的复选框，那么上面的全选按钮就不选中。
         for(var j=0; j<j_tbs.length; j++){
             j_tbs[j].onclick = function() {
-                var flag = true;
+                // 设置一个变量来控制按钮是否全部选中
+                let flag;
                 for(var i=0; i<j_tbs.length; i++){
                     if(j_tbs[i].checked == false){
                         flag = false;
                         break;
                     }
-                } 
+                    flag = true;
+                }
                 j_cbAll.checked = flag;
             }
         }

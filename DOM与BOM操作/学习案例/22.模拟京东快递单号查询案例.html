@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .search {
             position: relative;
             width: 178px;
@@ -19,9 +19,9 @@
         }
 
         .search .input {
-            border-style:none;
+            border-style: none;
         }
-        
+
         .con {
             display: none;
             position: absolute;
@@ -34,7 +34,7 @@
             line-height: 20px;
             color: #333;
         }
-        
+
         .con::before {
             content: '';
             width: 0;
@@ -57,26 +57,26 @@
 
 
     <script>
-       var con = document.querySelector('.con');
-       var input = document.querySelector('.jd');
-        
-       input.addEventListener('keyup',function() {
-           if(this.value == ''){
-               con.style.display = 'none';
-           }else{
-            con.style.display = 'block';
-           con.innerHTML = input.value;
-           }
-       })
+        var con = document.querySelector('.con');
+        var input = document.querySelector('.jd');
 
-       input.addEventListener('blur',function() {
+        input.addEventListener('keyup', function () {
+            if (this.value == '') {
+                con.style.display = 'none';
+            } else {
+                con.style.display = 'block';
+                con.innerHTML = input.value;
+            }
+        })
+
+        input.addEventListener('blur', function () {
             con.style.display = 'none';
-       })
+        })
 
-       input.addEventListener('focus',function() {
-            if(this.value != ''){
+        input.addEventListener('focus', function () {
+            if (this.value != '') {
                 con.style.display = 'block';
             }
-       })
+        })
     </script>
 </body>

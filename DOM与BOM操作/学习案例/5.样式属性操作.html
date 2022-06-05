@@ -36,8 +36,8 @@
         // 两种样式修改方式，style和className
         input.onblur = function() {
             if(this.value.length<6||this.value.length>15){
-                // msg.innerHTML = '密码长度不正确';
-                msg.className = 'msg wrong';
+                msg.innerHTML = '密码长度不正确';
+                msg.className = 'wrong';
             }else{
                 msg.innerHTML = '密码长度正确';
                 msg.style.color = 'green';

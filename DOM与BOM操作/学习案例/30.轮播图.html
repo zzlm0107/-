@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!-- 轮播图主体 -->
     <div class="focus">
         <!-- 两侧按钮 -->
         <a href="#" class="arrow-l"></a>
-		<a href="#" class="arrow-r"></a>
+        <a href="#" class="arrow-r"></a>
 
         <!-- 轮播图片 -->
         <ul>
@@ -24,66 +26,66 @@
 
         <!-- 下侧小圆点 -->
         <ol>
-                                                                                            
+
         </ol>
     </div>
 
 
     <script>
         //缓动动画函数封装
-        function animate (obj,target,callback) {
-        	//使用前先清除之前的定时器
+        function animate(obj, target, callback) {
+            //使用前先清除之前的定时器
             clearInterval(obj.timer);
-            obj.timer = setInterval(function() {
- 		        var step = (target - obj.offsetleft)/10;
-		        step = step > 0 ? Math.ceil(step) : Math.floor(step);
-                if(obj.offsetleft == target){
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetleft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetleft == target) {
                     clearInterval(obj.timer);
-                    if(callback){
+                    if (callback) {
                         callback();
                     }
                 }
                 //每次调用使元素的位置发生变化
                 obj.style.left = obj.offsetleft + step + 'px';
-            },20);
+            }, 20);
         }
 
 
-        window.addEventListener('load',function() {
+        window.addEventListener('load', function () {
             var arrow_l = document.querySelector('.arrow-l');
             var arrow_r = document.querySelector('.arrow-r');
             var focus = document.querySelector('.focus');
-			
+
             // 1.鼠标经过显示隐藏左右按钮
-            focus.addEventListener('mouseenter',function() {
+            focus.addEventListener('mouseenter', function () {
                 arrow_l.style.display = 'bolck';
                 arrow_r.style.display = 'bolck';
                 //鼠标经过时停止定时器
                 clearInterval(timer);
                 timer = null;       //清除定时器变量
             })
-            focus.addEventListener('mouseleave',function() {
+            focus.addEventListener('mouseleave', function () {
                 arrow_l.style.display = 'none';
                 arrow_r.style.display = 'none';
                 //鼠标离开开启定时器
-                timer = setInterval(function() {
-                //手动调用右侧按钮的点击事件
-                arrow_r.click();
-                },2000)
+                timer = setInterval(function () {
+                    //手动调用右侧按钮的点击事件
+                    arrow_r.click();
+                }, 2000)
             })
 
-			// 2.动态生成小圆圈
+            // 2.动态生成小圆圈
             var ul = focus.querySelector('ul');
             var ol = fucus.querySelector('ol');
-            for(var i=0; i<ul.children.length; i++){
-				var li = document.createElement('li');
+            for (var i = 0; i < ul.children.length; i++) {
+                var li = document.createElement('li');
                 //创建的时候给小圆圈用自定义属性添加一个索引号
-                li.setAttribute('data-index',i);
+                li.setAttribute('data-index', i);
                 ol.appendChild(li);
 
                 //3.创建li标签的同时注册点击事件用排他思想给每个标签添加选中的类名
-                li.addEventListener('click',function() {
-                    for(let j=0; j<ol.children.length; j++){
+                li.addEventListener('click', function () {
+                    for (let j = 0; j < ol.children.length; j++) {
                         ol.children[j].className = '';
                     }
                     this.className = 'current';
@@ -94,7 +96,7 @@
                     num = index;
                     circle = index;
                     var focusWidth = focus.offsetWidth;
-                    animate(ul, -index*focusWidth);
+                    animate(ul, -index * focusWidth);
                 })
             }
             ol.children[0].className = 'current';
@@ -109,46 +111,46 @@
             var flag = true;    //设置节流阀的变量,利用回调函数实现节流阀
             //封装一个小圆圈选中变化的函数
             function circleChange() {
-                for(let j=0; j<ol.children.length; j++){
+                for (let j = 0; j < ol.children.length; j++) {
                     ol.children[j].className = '';
                 }
                 ol.children[circle].className = 'current';
             }
 
-            arrow_r.addEventListener('click',function() {
-               if(flag){
-                   flag = false;    //关闭节流阀
+            arrow_r.addEventListener('click', function () {
+                if (flag) {
+                    flag = false;    //关闭节流阀
                     //如果已经走到无缝动画复制的最后一张图片，那么要快速复原ul的left为0
-                    if(num == ul.children.length - 1){
+                    if (num == ul.children.length - 1) {
                         ul.style.left = 0;
                         num = 0;
                     }
                     num++;
-                    animate(ul, -num*focusWidth, function() {
+                    animate(ul, -num * focusWidth, function () {
                         flag = true;    //图片播放完毕时回调函数打开节流阀
                     });
 
                     //点击按钮时小圆圈也会跟随变化
                     circle++;
                     //如果走到了克隆的图片，就需要复原
-                    if(circle == ol.children.length){
+                    if (circle == ol.children.length) {
                         circle = 0;
                     }
                     circleChange();
-               }
+                }
             })
 
             //7.给左侧按钮添加点击滚动的图片的事件
-            arrow_l.addEventListener('click',function() {
-                if(flag){
+            arrow_l.addEventListener('click', function () {
+                if (flag) {
                     flag = false;    //关闭节流阀
                     //如果已经走到无缝动画的第一张图片，那么要快速变化ul的left为最后一张图片的位置
-                    if(num == 0){
+                    if (num == 0) {
                         num = ul.children.length - 1;
                         ul.style.left = -num * focusWidth + 'px';
                     }
                     num--;
-                    animate(ul, -num*focusWidth, function() {
+                    animate(ul, -num * focusWidth, function () {
                         flag = true;    //图片播放完毕时回调函数打开节流阀
                     });
 
@@ -160,17 +162,18 @@
                     // }
                     cricle = circle < 0 ? ol.children.length - 1 : circle;
                     circleChange();
-                    }
+                }
             })
 
             //8.自动播放轮播图
-            var timer = setInterval(function() {
+            var timer = setInterval(function () {
                 //手动调用右侧按钮的点击事件
                 arrow_r.click();
-            },2000)
-            
+            }, 2000)
+
 
         })
     </script>
 </body>
+
 </html>
